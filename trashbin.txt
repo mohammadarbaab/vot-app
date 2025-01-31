@@ -1,0 +1,65 @@
+
+      vote: { type: String, required: true },
+ 
+{
+      "user": "12234234234231134",
+      "votedAt": "2024"
+    },
+    {
+      "user": "12345678901234",
+      "votedAt": "2024"
+    }
+ 
+  email: { type: String },
+  age: {
+    type: Number,
+    required: true,
+  },
+  mobile: {
+    type: String,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  aadharCardNumber: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  role: {
+    type: String,
+    enum: ["voter", "admin"],
+    default: "voter",
+  },
+  isVoted: {
+    type: Boolean,
+    default: false,
+  },
+ 
+user
+ 
+required: true, unique: true 
+ 
+
+    required: true,
+ 
+
+candidates:GET -get the list of candidates
+ 
+get the list of candidates
+ 
+/admin/
+ 
+admin candidates managements:
+/admin
+ 
+candidates
+ 
+vote counts:
+/candidates/
+ 
