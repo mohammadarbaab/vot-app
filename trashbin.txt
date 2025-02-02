@@ -1,4 +1,7 @@
 
+const person=require()
+ 
+
       vote: { type: String, required: true },
  
 {
