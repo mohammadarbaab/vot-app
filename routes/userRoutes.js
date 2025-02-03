@@ -27,3 +27,24 @@ router.post("/signup", async (req, res) => {
     res.status(400).send(error);
   }
 });
+
+// login api
+router.post('/login',async(req,res)=>{
+    const {aadharCardNumber,password}=req.body;
+
+    // find the user by username
+    const user=await User.findOne({username:username});
+
+    // if user does not exist or password does not match,return error
+    if(!user || !(await user.comparePassword(password))){
+        return res.status(400).json({message:"Invalid username or password"});
+    }
+
+    // generate Token 
+    const payload={
+        id:user._id,
+        username:user.username
+    }
+    const token =generateToken(payload);
+    
+})
