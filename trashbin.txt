@@ -1,3 +1,126 @@
+
+  res.send("this os first")
+ 
+const express = require("express");
+const app = express();
+
+ 
+  "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
+ 
+mongodb+srv://hotels:6ZA1et1DmgMLsBi2@cluster0.m7o9j.mongodb.net/
+ 
+personSchema
+ 
+response
+ 
+password
+ 
+try {
+    const personId = req.params.id;
+    const updatedPersonData = req.body;
+
+    const response = await Person.findByIdAndUpdate(
+      personId,
+      updatedPersonData,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+    if (!response) {
+      res.status(404).json({ error: "person not found" });
+    }
+    console.log("data updated");
+    res.status(200).json(response);
+  } catch (error) {
+    console.log("data can not be updated");
+    res.status(500).json({ error: error.message });
+  }
+ 
+
+// get method with params filter with end point
+router.get("/:workType", async (req, res) => {
+  try {
+    const workType = req.params.workType;
+    if (
+      workType === "chef" ||
+      workType === "manager" ||
+      workType === "waiter"
+    ) {
+      const personData = await Person.find({ work: workType });
+      console.log("data fetch sucsessfuly");
+      res.status(200).json(personData);
+    } else {
+      res.status(400).json({ error: "invalid work type" });
+    }
+  } catch (err) {
+    console.log("data can not be fetch");
+    res.status(400).send(err);
+  }
+});
+ 
+
+// delete method for delete person for any user
+router.delete("/:id", async (req, res) => {
+  try {
+    const personId = req.params.id;
+    const response = await Person.findByIdAndDelete(personId);
+    if (!response) {
+      res.status(404).json({ error: "person not found" });
+    } else {
+      console.log("data deleted");
+    }
+  } catch (err) {
+    console.log("data can not be deleted");
+  }
+});
+ 
+
+    const userData = await Person.find();
+ 
+
+    console.log("fetch data", userData);
+ 
+
+    res.status(200).json(userData);
+ 
+psData
+ 
+
+// profile route
+router.get('/profile',jwtAuthMiddleware,async(req,res)=>{
+  try{
+    const userData=req.user;
+    const userId=userData.id;
+    const user=await Person
+  }catch(err){
+    console.log(err);
+    res.status(500).json({error:'Internal server error'})
+  }
+})
+ 
+
+    username: user.username,
+ 
+username
+ 
+ username:
+ 
+aadharCardNumber
+ 
+console.log("responnse done", response);
+    res.status(200).json(response);
+    console.log("data saved succesfully", response);
+ 
+savedPerson
+ 
+savedPerson.username
+ 
+
+    console.log(JSON.stringify(payload));
+ 
 username,password
  
 
