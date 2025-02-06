@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 const userRoutes = require("./routes/userRoutes");
 
-app.use("user", userRoutes);
+app.use("/user", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello Guys This is Mein Bca Wala");

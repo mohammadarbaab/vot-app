@@ -1,4 +1,10 @@
 
+    res.status(200).json({ response: response, token: token });
+ 
+
+    console.log("data saved succesffuly",newUser)
+ 
+
   res.send("this os first")
  
 const express = require("express");

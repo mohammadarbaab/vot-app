@@ -9,11 +9,11 @@ router.post("/signup", async (req, res) => {
     const data = req.body;
 
     const newUser = new User(data);
-
+    console.log('saved data',newUser)
     const response = await newUser.save();
 
     const payload = {
-      id: response.id,
+      id: response._id,
     };
     console.log(JSON.stringify(payload));
     const token = generateToken(payload);
