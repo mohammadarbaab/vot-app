@@ -2,6 +2,9 @@
     res.status(200).json({ response: response, token: token });
  
 
+    res.status(200).json({ response: response, token: token });
+ 
+
     console.log("data saved succesffuly",newUser)
  
 

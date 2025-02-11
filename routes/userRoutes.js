@@ -18,7 +18,11 @@ router.post("/signup", async (req, res) => {
     console.log(JSON.stringify(payload));
     const token = generateToken(payload);
     console.log("token is ", token);
-    res.status(200).json({ response: response, token: token });
+    res.status(200).json({
+      response: JSON.parse(JSON.stringify(response)), 
+      token: token 
+    });
+    
   } catch (error) {
     res.status(400).send(error);
   }
